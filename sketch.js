@@ -1,3 +1,7 @@
+let bolleX = [236, 239, 520, 492, 201, 279, 555, 479];
+let bolleY = [543, 613, 553, 614, 663, 661, 609, 668];
+let bolleD = [24, 44, 24, 44, 24, 24, 22, 22];   // diametro
+
 function setup() {
   createCanvas(736, 981);
   noStroke();
@@ -36,11 +40,20 @@ function draw() {
   circle(520, 553, 24);
   circle(492, 614, 44);
 
-  fill(212, 100, 130);                      // bubble più scure
+  fill(212, 100, 130);                      // bubble scure
   circle(201, 663, 24);
   circle(279, 661, 24);
   circle(555, 609, 22);
   circle(479, 668, 22);
+
+  for (let i = 0; i < 8; i++) {
+    if (i < 4) {
+      fill(240, 190, 205);
+    } else {
+      fill(212, 100, 130);
+    }
+    circle(bolleX[i], bolleY[i], bolleD[i]);
+  }
   
   pop();
 }
